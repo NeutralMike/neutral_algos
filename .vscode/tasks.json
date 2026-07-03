@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Configure (if needed) + build. Used as the pre-launch step for debugging.
+      "label": "build",
+      "type": "shell",
+      "command": "cmake -S ${workspaceFolder}/cpp -B ${workspaceFolder}/cpp/build -G Ninja && cmake --build ${workspaceFolder}/cpp/build",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": "$gcc"
+    }
+  ]
+}

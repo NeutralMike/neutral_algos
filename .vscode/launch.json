@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Runs/debugs whichever target is selected in the CMake status-bar dropdown,
+      // so this ONE config works for every algorithm you add.
+      "name": "Debug selected target",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${command:cmake.launchTargetPath}",
+      "args": ["${input:cliArg}"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/cpp",
+      "MIMode": "gdb",
+      "preLaunchTask": "build"
+    }
+  ],
+  "inputs": [
+    {
+      // VS Code prompts you for the argument each launch -> handles the
+      // "different input per algorithm" case without editing this file.
+      "id": "cliArg",
+      "type": "promptString",
+      "description": "Command-line argument to pass to the program",
+      "default": "hello"
+    }
+  ]
+}

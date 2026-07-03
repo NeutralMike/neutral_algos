@@ -1,0 +1,9 @@
+{
+  // The C++ project lives in cpp/, not the repo root (room for other languages).
+  "cmake.sourceDirectory": "${workspaceFolder}/cpp",
+  "cmake.buildDirectory": "${workspaceFolder}/cpp/build",
+  "cmake.generator": "Ninja",
+
+  // Point IntelliSense at the compile database CMake generates -> fixes red squiggles.
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/cpp/build/compile_commands.json"
+}
