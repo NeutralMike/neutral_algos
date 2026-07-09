@@ -5,12 +5,16 @@ set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)  # lets VS Code IntelliSense find everything
 
+# ---- Dependencies ----
+find_package(OpenSSL REQUIRED)
+
 # ---- The algorithms library ----
 # Add new implementation files (src/*.cpp) to this list as you write them.
 add_library(neutral_algos
     src/hash_ring.cpp
 )
 target_include_directories(neutral_algos PUBLIC include)
+target_link_libraries(neutral_algos PRIVATE OpenSSL::Crypto)
 target_compile_options(neutral_algos PRIVATE -Wall -Wextra -Wpedantic)
 
 # ---- Manual runners (one per algorithm, optional) ----

@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    std::string result = neutral_algos::process(argv[1]);
+    int result = neutral_algos::process(argv[1]);
     std::cout << result << std::endl;
     return 0;
 }

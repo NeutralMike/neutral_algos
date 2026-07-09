@@ -4,6 +4,9 @@
 
 // Tests call the SAME library functions the CLI uses — that's the whole point.
 int main() {
-    assert(neutral_algos::process("hello") == "hello");   // example; add your own
+    // Static N = 4
+    assert(neutral_algos::process("Node_A") == 2);
+    assert(neutral_algos::process("Node_B") == 1);
+    assert(neutral_algos::process("Node_C") == 2);
     return 0;
 }
