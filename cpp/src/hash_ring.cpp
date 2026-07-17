@@ -4,8 +4,7 @@
 
 namespace neutral_algos {
 
-int process(const std::string& input) {
-    int num_nodes = 4;
+int process(const std::string& input, const unsigned int num_nodes) {
     unsigned char hash_parts[MD5_DIGEST_LENGTH];
     MD5((unsigned char *)input.c_str(), input.length(), hash_parts);
     unsigned int hash = (hash_parts[0] << 24) | (hash_parts[1] << 16) | (hash_parts[2] << 8) | hash_parts[3];
